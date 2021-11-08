@@ -1,4 +1,4 @@
-terraform plan -var-file="vars/dev-eu-west-3.tfvars" -out=tfplan
+terraform plan -var-file="dev-eu-west-3.tfvars" -out=tfplan
 
 terraform apply -input=false tfplan 
 
