@@ -3,11 +3,10 @@ terraform plan -var-file="vars/dev-eu-west-3.tfvars" -out=tfplan
 terraform apply -input=false tfplan 
 
 sudo docker run -d -it -p 8080:8080 -p 50000:50000 \
--v /var/jenkins_files:/var/jenkins_home \
--v /var/run/docker.sock:/var/run/docker.sock \
+/var/jenkins_files:/var/jenkins_home \
+/var/run/docker.sock:/var/run/docker.sock \
 --restart unless-stopped \
 takashoty/jenkins:v3
-
 
 
 sudo docker exec -i <container_id> bash
@@ -38,6 +37,6 @@ sudo service docker restart
 4. check whether docker is there?
 curl http://localhost:4243/version
 
-Configure Jenkins:
+Configure Jenkins:sudo docker 
 COnfigure Clouds --> Docker --> tcp://172.31.19.34:4243
 Docker Image --> takashoty/jenkins:agent
