@@ -26,7 +26,7 @@ variable "key_name" {
 variable "image_id" {
   type = string
   description = "The id of the machine image (AMI) to use for the server."
-  default = "ami-04d994d44ec2e2451"
+  default = "ami-03c351a3de8084aec"
 }
 
 variable "instance_type" {
